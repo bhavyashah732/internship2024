@@ -1,0 +1,456 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Admin Panel - Employee Leave</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="../assets/images/icon/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/themify-icons.css">
+    <link rel="stylesheet" href="../assets/css/metisMenu.css">
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- Start datatable css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+    <!-- others css -->
+    <link rel="stylesheet" href="../assets/css/typography.css">
+    <link rel="stylesheet" href="../assets/css/default-css.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="dashboard.html"><img src="../assets/images/icon/logo.png" alt="logo"></a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+        <ul class="metismenu" id="menu">
+            <li class=""><a href="dashboard.html"><i class="ti-dashboard"></i> <span>Dashboard</span></a></li>
+                            
+            <li class=""><a href="Employee section.html"><i class="ti-id-badge"></i> <span>Employee Section</span></a></li>
+                            
+            <li class=""><a href="Department section.html"><i class="fa fa-th-large"></i> <span>Department Section</span></a></li>
+    
+             <li class=""><a href="Leave section.html"><i class="fa fa-sign-out"></i> <span>Leave Types</span></a></li>
+
+        <li class="active">
+            <a href="javascript:void(0)" aria-expanded="true"><i class="ti-briefcase"></i><span>Manage Leave</span></a>
+
+            <ul class="collapse">
+                <li ><a href="pending.html"><i class="fa fa-spinner"></i> Pending</a></li>
+                <li ><a href="approved.html"><i class="fa fa-check"></i> Approved</a></li>
+                <li ><a href="declined.html"><i class="fa fa-times-circle"></i> Declined</a></li>
+                <li ><a href="leave history.html"><i class="fa fa-history"></i> Leave History</a></li>
+            </ul>
+            
+        </li>
+
+        <li class=""><a href="Manage Admin.html"><i class="fa fa-lock"></i> <span>Manage Admin</span></a></li>
+                            
+    </ul>
+</nav>                </div>
+            </div>
+        </div>
+        <!-- sidebar menu area end -->
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        
+                    </div>
+                    <!-- profile info & task notification -->
+                    <div class="col-md-6 col-sm-4 clearfix">
+                        <ul class="notification-area pull-right">
+                            <li id="full-view"><i class="ti-fullscreen"></i></li>
+                            <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
+
+                            <!-- Notification bell -->
+                            <link rel="stylesheet" href="../assets/css/styles.css">
+
+    
+    <li class="dropdown">
+        <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
+            <span>0</span>
+            </i>
+            <div class="dropdown-menu bell-notify-box notify-box">
+            <span class="notify-title">You have 0 <b>unread</b> notifications!</span>
+
+            <div class="notify-list">
+             
+                     </div>
+                            
+                     
+                     
+                      </div>
+                      
+     </li>
+
+     
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- header area end -->
+            <!-- page title area start -->
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                            <h4 class="page-title pull-left">Leaves History</h4>
+                            <ul class="breadcrumbs pull-left">
+                                <li><a href="dashboard.php">Home</a></li>
+                                <li><span>History</span></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6 clearfix">
+                        <div class="user-profile pull-right">
+                            <img class="avatar user-thumb" src="../assets/images/admin.png" alt="avatar">
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">ADMIN <i class="fa fa-angle-down"></i></h4>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="logout.php">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- page title area end -->
+            <div class="main-content-inner">
+                
+                
+                <!-- row area start -->
+                <div class="row">
+                    
+                    <!-- trading history area start -->
+                    
+                                
+                                <div class="col-12 mt-5">
+                                    <div class="card">
+
+                                    
+                                        <div class="card-body">
+                                        <!-- <h4 class="header-title"></h4> -->
+                                        <div class="single-table">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover table-striped table-bordered progress-table text-center">
+                                                <thead class="text-uppercase">
+
+                                                <tr>
+                                                        <td>S.N</td>
+                                                        <td>Employee ID</td>
+                                                        <td width="120">Full Name</td>
+                                                        <td>Leave Type</td>
+                                                        <td>Applied On</td>
+                                                        <td>Current Status</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                  
+
+                                        <tr>
+                                            <td> <b>1</b></td>
+                                            <td>ASTR012447</td>
+                                            <td><a href="update-employee.php?empid=8" target="_blank">krushang patel</a></td>
+                                            <td>Self-Quarantine Leave</td>
+                                            <td>2022-02-10 21:35:30</td>
+                                            <td>                                                 <span style="color: green">Approved <i class="fa fa-check-square-o"></i></span>
+                                                 
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=21" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                  
+
+                                        <tr>
+                                            <td> <b>2</b></td>
+                                            <td>ASTR000084</td>
+                                            <td><a href="update-employee.php?empid=7" target="_blank">vishal shingh</a></td>
+                                            <td>Casual Leave</td>
+                                            <td>2022-02-09 21:01:15</td>
+                                            <td>                                            <span style="color: blue">Pending <i class="fa fa-spinner"></i></span>
+                                            
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=20" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                  
+
+                                        <tr>
+                                            <td> <b>3</b></td>
+                                            <td>ASTR001245</td>
+                                            <td><a href="update-employee.php?empid=1" target="_blank">mantra pramar</a></td>
+                                            <td>Compensatory Leave</td>
+                                            <td>2021-03-03 17:54:15</td>
+                                            <td>                                            <span style="color: blue">Pending <i class="fa fa-spinner"></i></span>
+                                            
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=19" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                  
+
+                                        <tr>
+                                            <td> <b>4</b></td>
+                                            <td>ASTR002996</td>
+                                            <td><a href="update-employee.php?empid=4" target="_blank">divyansh panchal</a></td>
+                                            <td>Medical Leave</td>
+                                            <td>2021-03-03 17:39:44</td>
+                                            <td>                                                 <span style="color: green">Approved <i class="fa fa-check-square-o"></i></span>
+                                                 
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=18" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                  
+
+                                        <tr>
+                                            <td> <b>5</b></td>
+                                            <td>ASTR004699</td>
+                                            <td><a href="update-employee.php?empid=3" target="_blank">maverick shah</a></td>
+                                            <td>Paternity Leave</td>
+                                            <td>2021-03-03 16:28:18</td>
+                                            <td>                                            <span style="color: blue">Pending <i class="fa fa-spinner"></i></span>
+                                            
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=17" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                  
+
+                                        <tr>
+                                            <td> <b>6</b></td>
+                                            <td>ASTR001245</td>
+                                            <td><a href="update-employee.php?empid=1" target="_blank">mantra pramar</a></td>
+                                            <td>Casual Leave</td>
+                                            <td>2021-03-02 15:02:42</td>
+                                            <td>                                                <span style="color: red">Declined <i class="fa fa-times"></i></span>
+                                                 
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=15" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                  
+
+                                        <tr>
+                                            <td> <b>7</b></td>
+                                            <td>ASTR001369</td>
+                                            <td><a href="update-employee.php?empid=2" target="_blank">Druv patel</a></td>
+                                            <td>Medical Leave</td>
+                                            <td>2021-03-02 15:01:01</td>
+                                            <td>                                            <span style="color: blue">Pending <i class="fa fa-spinner"></i></span>
+                                            
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=14" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                  
+
+                                        <tr>
+                                            <td> <b>8</b></td>
+                                            <td>ASTR001245</td>
+                                            <td><a href="update-employee.php?empid=1" target="_blank">mantra pramar</a></td>
+                                            <td>Casual Leave</td>
+                                            <td>2020-07-03 13:41:11</td>
+                                            <td>                                                 <span style="color: green">Approved <i class="fa fa-check-square-o"></i></span>
+                                                 
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=12" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                  
+
+                                        <tr>
+                                            <td> <b>9</b></td>
+                                            <td>ASTR001245</td>
+                                            <td><a href="update-employee.php?empid=1" target="_blank">mantra pramar</a></td>
+                                            <td>Medical Leave</td>
+                                            <td>2020-04-29 20:31:14</td>
+                                            <td>                                                 <span style="color: green">Approved <i class="fa fa-check-square-o"></i></span>
+                                                 
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=11" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                  
+
+                                        <tr>
+                                            <td> <b>10</b></td>
+                                            <td>ASTR001245</td>
+                                            <td><a href="update-employee.php?empid=1" target="_blank">mantra pramar</a></td>
+                                            <td>Restricted Holiday</td>
+                                            <td>2020-12-03 13:59:07</td>
+                                            <td>                                                 <span style="color: green">Approved <i class="fa fa-check-square-o"></i></span>
+                                                 
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=10" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                  
+
+                                        <tr>
+                                            <td> <b>11</b></td>
+                                            <td>ASTR001369</td>
+                                            <td><a href="update-employee.php?empid=2" target="_blank">Druv patel</a></td>
+                                            <td>Medical Leave</td>
+                                            <td>2020-12-02 23:56:01</td>
+                                            <td>                                                 <span style="color: green">Approved <i class="fa fa-check-square-o"></i></span>
+                                                 
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=9" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                  
+
+                                        <tr>
+                                            <td> <b>12</b></td>
+                                            <td>ASTR001245</td>
+                                            <td><a href="update-employee.php?empid=1" target="_blank">mantra pramar</a></td>
+                                            <td>Medical Leave</td>
+                                            <td>2020-11-20 16:44:14</td>
+                                            <td>                                                 <span style="color: green">Approved <i class="fa fa-check-square-o"></i></span>
+                                                 
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=8" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                  
+
+                                        <tr>
+                                            <td> <b>13</b></td>
+                                            <td>ASTR001245</td>
+                                            <td><a href="update-employee.php?empid=1" target="_blank">mantra pramar</a></td>
+                                            <td>Casual Leave</td>
+                                            <td>2020-11-19 18:41:21</td>
+                                            <td>                                                <span style="color: red">Declined <i class="fa fa-times"></i></span>
+                                                 
+
+                                             </td>
+
+                                            
+                                            <td><a href="employeeLeave-details.php?leaveid=7" class="btn btn-secondary btn-sm">View Details</a></td>
+                                            </tr>
+                                                                                            </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                          
+                    <!-- trading history area end -->
+                    
+                </div>
+                <!-- row area end -->
+                
+                </div>
+                <!-- row area start-->
+            </div>
+            <footer>
+        <div class="footer-area">
+                <p>© 2023 | Payroll Management System | Developed By : AJAY</p>
+        </div>
+</footer>        <!-- footer area end-->
+        </div>
+        <!-- main content area end -->
+
+        
+        
+
+    </div>
+    <!-- jquery latest version -->
+    <script src="../assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/metisMenu.min.js"></script>
+    <script src="../assets/js/jquery.slimscroll.min.js"></script>
+    <script src="../assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- start chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- start highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- start zingchart js -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+    </script>
+    <!-- all line chart activation -->
+    <script src="assets/js/line-chart.js"></script>
+    <!-- all pie chart -->
+    <script src="assets/js/pie-chart.js"></script>
+
+        <!-- Start datatable js -->
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    
+    <!-- others plugins -->
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+</body>
+
+</html>
